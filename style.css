@@ -13,6 +13,7 @@
     --manga-2: #efedef;
     --bavarian-gold-2: #d2b863;
     --bavarian-gold-1: #fffba4;
+    --bavarian-red: #ec4237;
     --void-2: #0f0913;
 }
 
@@ -207,7 +208,7 @@ body #modal {
     width: 100%;
     height: 100%;
     background: rgba(15, 9, 19, 0.65);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     padding: 106px;
@@ -216,6 +217,7 @@ body #modal {
 }
 
 body #modal .modal-content {
+    position: relative;
     width: 100%;
     height: 100%;
     background-color: var(--bg-color);
@@ -229,6 +231,45 @@ body #modal .modal-content {
     align-items: center;
     border-radius: 20px;
     box-shadow: 0px 0px 25px var(--bavarian-gold-1);
+}
+
+body #modal .modal-content .close-button {
+    position: absolute;
+    top: calc(44px - 21px);
+    right: calc(45px - 21px);
+    margin: 21px;
+    width: calc(5 * 8px); /* 16.64 each box */
+    height: calc(5 * 8px);
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+body #modal .modal-content .close-button .box {
+    width: 8px;
+    height: 8px;
+    background-color: var(--bavarian-gold-1);
+    box-shadow: 0 0 10px var(--bavarian-gold-2);
+    transition: all 0.2s ease-in-out;
+}
+
+body #modal .modal-content .close-button:hover .box {
+    background-color: var(--bavarian-red);
+}
+
+body #modal .modal-content .close-button .first-row {
+    display: flex;
+    gap: calc(8px * 3);
+}
+
+body #modal .modal-content .close-button .second-row {
+    display: flex;
+    justify-content: center;
+    gap: calc(8px);
+}
+
+body #modal .modal-content .close-button .third-row {
+    display: flex;
+    justify-content: center;
 }
 
 body #modal .modal-content header {
@@ -262,13 +303,13 @@ body #modal .modal-content .line {
 
 body #modal .modal-content main {
     box-sizing: border-box;
-    padding: 64px 24px;
+    padding: 24px 64px;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 32px;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 body #modal .modal-content main .input-row {
@@ -327,13 +368,40 @@ body #modal .modal-content main .input-row .input-entry textarea {
 body #modal .modal-content main .input-row .input-entry textarea::placeholder {
     color: var(--bavarian-gold-2);
 }
-
-body #modal .modal-content main .input-row .input-entry input[type='date']::-webkit-calendar-picker-indicator {
+body #modal .modal-content main .input-row .input-entry input[type='date'] {
     color: var(--bavarian-gold-2);
-    border-color: var(--bavarian-gold-2);
-    background-color: var(--bavarian-gold-2);
+}
+body #modal .modal-content main .input-row .input-entry input[type='date']::-webkit-calendar-picker-indicator {
+    background-image: url('assets/Date range.png');
+    background-size: 24px;
 }
 
+body #modal .modal-content main .input-row .input-entry select {
+    font-size: var(--pill-p1-font-size);
+    font-weight: var(--font-regular);
+    background-color: transparent;
+    border: 3px solid var(--bavarian-gold-2);
+    height: min-content;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    color: var(--bavarian-gold-2);
+    background-image: url('assets/arrow-down.png');
+}
+
+body #modal .modal-content main .input-row .input-entry select option {
+    background-color: var(--bg-color);
+    color: var(--bavarian-gold-2);
+    font-size: var(--pill-p1-font-size) !important;
+    font-weight: var(--font-regular) !important;
+    display: flex;
+    border: 2px solid var(--bavarian-gold-2);
+}
+body #modal .modal-content main .input-row .input-entry .custom-option {
+    background-color: var(--bright-green);
+    width: 20px;
+    height: 20px;
+}
 body #modal .modal-content button {
     justify-self: flex-end;
 }

@@ -45,7 +45,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="card">
                         <img src="assets/Logo image.png" />
                         <div class="information">
@@ -99,6 +98,27 @@
         </main>
         <div id="modal">
             <form class="modal-content">
+                <div class="close-button">
+                    <div class="first-row">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="second-row">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="third-row">
+                        <div class="box"></div>
+                    </div>
+                    <div class="second-row">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="first-row">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </div>
                 <header>
                     <div class="modal-title">register here</div>
                     <div class="modal-subtitle">
@@ -114,18 +134,18 @@
                             <input type="text" id="name" name="name" placeholder="| Enter your name" />
                         </div>
                         <div class="input-entry">
-                            <label for="name">Name <span>*</span></label>
-                            <input type="text" id="name" name="name" placeholder="| Enter your name" />
+                            <label for="name">Last Name <span>*</span></label>
+                            <input type="text" id="name" name="name" placeholder="| Enter your lastname" />
                         </div>
                     </div>
                     <div class="input-row">
                         <div class="input-entry">
-                            <label for="name">Name <span>*</span></label>
-                            <input type="text" id="name" name="name" placeholder="| Enter your name" />
+                            <label for="name">Gitlab ID <span>*</span></label>
+                            <input type="text" id="name" name="name" placeholder="| Enter your Gitlab ID" />
                         </div>
                         <div class="input-entry">
-                            <label for="name">Name <span>*</span></label>
-                            <input type="text" id="name" name="name" placeholder="| Enter your name" />
+                            <label for="name">Kaggle ID <span>*</span></label>
+                            <input type="text" id="name" name="name" placeholder="| Enter your Kaggle ID" />
                         </div>
                     </div>
                     <div class="input-row">
@@ -140,8 +160,15 @@
                             <input type="date" id="date" name="date" placeholder="00/00/00" />
                         </div>
                         <div class="input-entry">
-                            <label for="name">Name <span>*</span></label>
-                            <input type="text" id="name" name="name" placeholder="| Enter your name" />
+                            <label for="tags">Tags</label>
+                            <select id="tags" name="interests">
+                                <option value="" selected disabled style="display: none">Choose your interests</option>
+                                <option value="ui-ux">UX/UI</option>
+                                <option value="frontend">FrontEnd</option>
+                                <option value="backend">BackEnd</option>
+                                <option value="fullstack">Fullstack</option>
+                                <option value="product">Product</option>
+                            </select>
                         </div>
                     </div>
                 </main>
