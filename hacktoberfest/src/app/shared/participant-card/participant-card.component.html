@@ -1,0 +1,16 @@
+<div class="card">
+  <img src="assets/Logo image.png" />
+  <div class="information">
+    <span> Giorgos </span>
+    <span>Zogopoulos </span>
+    <div class="pill-tags">
+      <div class="pill-tag">Pill tag</div>
+      <div class="pill-tag">Pill tag</div>
+    </div>
+  </div>
+  <app-details
+    (seeDetailsChange)="changeArrowPosition($event)"
+    style="display: flex; flex-direction: column"
+    [style.justify-content]="arrow_down ? 'flex-end' : 'flex-start'"
+  ></app-details>
+</div>
