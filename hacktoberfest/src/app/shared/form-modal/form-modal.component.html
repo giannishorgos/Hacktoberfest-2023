@@ -1,0 +1,101 @@
+<div id="modal" [style.display]="displayForm ? 'flex' : 'none'">
+  <form class="modal-content">
+    <div (click)="closeForm()" class="close-button">
+      <div class="first-row">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <div class="second-row">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <div class="third-row">
+        <div class="box"></div>
+      </div>
+      <div class="second-row">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <div class="first-row">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+    <header>
+      <div class="modal-title">register here</div>
+      <div class="modal-subtitle">
+        Welcome to Hacktoberfest 2023<br />
+        Fill the form in order to register
+      </div>
+    </header>
+    <div class="line"></div>
+    <main>
+      <div class="input-row">
+        <div class="input-entry">
+          <label for="name">Name <span>*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="| Enter your name"
+          />
+        </div>
+        <div class="input-entry">
+          <label for="name">Last Name <span>*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="| Enter your lastname"
+          />
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-entry">
+          <label for="name">Gitlab ID <span>*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="| Enter your Gitlab ID"
+          />
+        </div>
+        <div class="input-entry">
+          <label for="name">Kaggle ID <span>*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="| Enter your Kaggle ID"
+          />
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-entry">
+          <label for="name">About you</label>
+          <textarea placeholder="| Write your bio"></textarea>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-entry">
+          <label for="date-of-birth">Date of birth</label>
+          <input type="date" id="date" name="date" placeholder="00/00/00" />
+        </div>
+        <div class="input-entry">
+          <label for="tags">Tags</label>
+          <select id="tags" name="interests">
+            <option value="" selected disabled style="display: none">
+              Choose your interests
+            </option>
+            <option value="ui-ux">UX/UI</option>
+            <option value="frontend">FrontEnd</option>
+            <option value="backend">BackEnd</option>
+            <option value="fullstack">Fullstack</option>
+            <option value="product">Product</option>
+          </select>
+        </div>
+      </div>
+    </main>
+    <button>Register</button>
+  </form>
+</div>

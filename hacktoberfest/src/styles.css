@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --font-bold: 700;
+  --font-medium: 500;
+  --font-regular: 400;
+  --h1-font-size: 90px;
+  --h2-font-size: 70px;
+  --h3-button-font-size: 36px;
+  --pill-p1-font-size: 20px;
+  --p2-font-size: 24px;
+
+  --bg-color: #0f0913;
+  --bright-green: #b4ff39;
+  --manga-2: #efedef;
+  --bavarian-gold-2: #d2b863;
+  --bavarian-gold-1: #fffba4;
+  --bavarian-red: #ec4237;
+  --void-2: #0f0913;
+}
+
+html {
+  height: fit-content;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrains Mono";
+}
+
+body {
+  background-color: var(--bg-color);
+  padding: 64px;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+button {
+  padding: 12px 64px;
+  width: fit-content;
+  height: fit-content;
+  font-size: var(--h3-button-font-size);
+  font-weight: var(--font-medium);
+  background-color: var(--bavarian-gold-2);
+  color: var(--void-2);
+  border: 3px solid var(--bavarian-gold-2);
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  background-color: var(--void-2);
+  color: var(--bavarian-gold-2);
+  box-shadow: 0 0 20px var(--bavarian-gold-1);
+}
