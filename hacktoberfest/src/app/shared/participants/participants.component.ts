@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
 
 @Component({
