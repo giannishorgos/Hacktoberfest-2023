@@ -5,11 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './tag-option.component.html',
   styleUrls: ['./tag-option.component.css'],
 })
-export class TagOptionComponent implements OnInit {
+export class TagOptionComponent {
   @Input() isSelected!: boolean;
   @Input() tagName!: string;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

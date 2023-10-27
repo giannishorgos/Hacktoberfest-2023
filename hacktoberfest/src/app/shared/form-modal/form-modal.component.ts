@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { DataSharingService } from 'src/app/services/data-sharing.service';
   templateUrl: './form-modal.component.html',
   styleUrls: ['./form-modal.component.css'],
 })
-export class FormModalComponent implements OnInit {
+export class FormModalComponent {
   displayForm: boolean = false;
   showTags: boolean = true;
   tags: { name: string; isSelected: boolean }[] = [
@@ -22,8 +22,6 @@ export class FormModalComponent implements OnInit {
       this.displayForm = value;
     });
   }
-
-  ngOnInit(): void {}
 
   closeForm() {
     this.dataSharingService.toggleForm();

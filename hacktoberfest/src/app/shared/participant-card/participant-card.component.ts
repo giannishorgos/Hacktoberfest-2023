@@ -5,11 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './participant-card.component.html',
   styleUrls: ['./participant-card.component.css'],
 })
-export class ParticipantCardComponent implements OnInit {
+export class ParticipantCardComponent {
   arrow_down = true;
-  constructor() {}
 
-  ngOnInit(): void {}
   changeArrowPosition() {
     this.arrow_down = !this.arrow_down;
   }

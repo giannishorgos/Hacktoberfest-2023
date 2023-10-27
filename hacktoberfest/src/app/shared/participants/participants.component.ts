@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
 
 @Component({
@@ -6,10 +6,8 @@ import { DataSharingService } from 'src/app/services/data-sharing.service';
   templateUrl: './participants.component.html',
   styleUrls: ['./participants.component.css'],
 })
-export class ParticipantsComponent implements OnInit {
+export class ParticipantsComponent {
   constructor(private dataSharingService: DataSharingService) {}
-
-  ngOnInit(): void {}
 
   openForm() {
     this.dataSharingService.toggleForm();
