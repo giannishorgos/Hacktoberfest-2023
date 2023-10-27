@@ -20,6 +20,8 @@
 html {
   height: fit-content;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 * {
@@ -32,16 +34,16 @@ body {
   background-color: var(--bg-color);
   padding: 64px;
   height: 100%;
-  width: 100%;
+  max-width: 1403px;
   box-sizing: border-box;
   position: relative;
 }
 
-app-root {
+/* app-root {
   display: flex;
   flex-direction: column;
   gap: 64px;
-}
+} */
 
 button {
   padding: 12px 64px;
@@ -54,6 +56,7 @@ button {
   border: 3px solid var(--bavarian-gold-2);
   border-radius: 20px;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 button:hover {
   background-color: var(--void-2);

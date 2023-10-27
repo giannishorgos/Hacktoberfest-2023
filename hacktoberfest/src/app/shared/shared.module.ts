@@ -5,9 +5,10 @@ import { ParticipantsComponent } from './participants/participants.component';
 import { FormModalComponent } from './form-modal/form-modal.component';
 import { ParticipantCardComponent } from './participant-card/participant-card.component';
 import { DetailsComponent } from './participant-card/details/details.component';
+import { TagOptionComponent } from './form-modal/tag-option/tag-option.component';
 
 @NgModule({
-  declarations: [HeaderComponent, ParticipantsComponent, FormModalComponent, ParticipantCardComponent, DetailsComponent],
+  declarations: [HeaderComponent, ParticipantsComponent, FormModalComponent, ParticipantCardComponent, DetailsComponent, TagOptionComponent],
   exports: [HeaderComponent, ParticipantsComponent, FormModalComponent],
   imports: [CommonModule],
 })

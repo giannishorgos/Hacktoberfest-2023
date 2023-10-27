@@ -10,7 +10,7 @@ export class ParticipantCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  changeArrowPosition(value: boolean) {
+  changeArrowPosition() {
     this.arrow_down = !this.arrow_down;
   }
 }

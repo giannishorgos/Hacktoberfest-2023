@@ -39,6 +39,7 @@
   align-self: flex-end;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 #modal .modal-content .close-button .box {
   width: 8px;
@@ -97,7 +98,7 @@
   box-sizing: border-box;
 }
 
-#modal .modal-content main {
+main {
   box-sizing: border-box;
   padding: 24px 64px;
   width: 100%;
@@ -108,33 +109,34 @@
   justify-content: flex-start;
 }
 
-#modal .modal-content main .input-row {
+.input-row {
   display: flex;
   gap: 32px;
   width: 100%;
   color: var(--bavarian-gold-2);
 }
 
-#modal .modal-content main .input-row .input-entry {
+.input-row .input-entry {
   display: flex;
   width: 100%;
   flex-direction: column;
   gap: 24px;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
-#modal .modal-content main .input-row .input-entry label {
+.input-row .input-entry label {
   font-size: var(
     --p2-font-size
   ); /* Figma design is not consistent about the h3 header font size */
   font-weight: var(--font-medium);
 }
 
-#modal .modal-content main .input-row .input-entry label span {
+.input-row .input-entry label span {
   vertical-align: super;
 }
 
-#modal .modal-content main .input-row .input-entry input {
+input,
+.tags-input {
   font-size: var(--pill-p1-font-size);
   font-weight: var(--font-regular);
   background-color: transparent;
@@ -146,11 +148,27 @@
   color: var(--bavarian-gold-1);
 }
 
-#modal .modal-content main .input-row .input-entry input::placeholder {
+.tags-input {
+  color: var(--bavarian-gold-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  height: 0;
+  width: 0;
+  border: 10px solid transparent;
+  /* border-color: var(--bavarian-gold-2) transparent transparent transparent; */
+  transform: translateY(25%);
+  transition: all 0.2s ease-in-out;
+}
+
+.input-row .input-entry input::placeholder {
   color: var(--bavarian-gold-2);
 }
 
-#modal .modal-content main .input-row .input-entry textarea {
+.input-row .input-entry textarea {
   resize: vertical;
   font-size: var(--pill-p1-font-size);
   font-weight: var(--font-regular);
@@ -163,12 +181,14 @@
   color: var(--bavarian-gold-1);
 }
 
-#modal .modal-content main .input-row .input-entry textarea::placeholder {
+.input-row .input-entry textarea::placeholder {
   color: var(--bavarian-gold-2);
 }
-#modal .modal-content main .input-row .input-entry input[type="date"] {
+
+.input-row .input-entry input[type="date"] {
   color: var(--bavarian-gold-2);
 }
+
 #modal
   .modal-content
   main
@@ -179,7 +199,7 @@
   background-size: 24px;
 }
 
-#modal .modal-content main .input-row .input-entry select {
+.input-row .input-entry select {
   font-size: var(--pill-p1-font-size);
   font-weight: var(--font-regular);
   background-color: transparent;
@@ -191,19 +211,31 @@
   color: var(--bavarian-gold-2);
 }
 
-#modal .modal-content main .input-row .input-entry select option {
+.input-row .input-entry select option {
   background-color: var(--bg-color);
   color: var(--bavarian-gold-2);
-  font-size: var(--pill-p1-font-size) !important;
-  font-weight: var(--font-regular) !important;
-  display: flex;
-  border: 2px solid var(--bavarian-gold-2);
+  font-size: var(--pill-p1-font-size);
+  font-weight: var(--font-regular);
+  /* display: flex; */
+  border: 2px solid var(--bavarian-gold-2) !important;
 }
-#modal .modal-content main .input-row .input-entry .custom-option {
+.input-row .input-entry .custom-option {
   background-color: var(--bright-green);
   width: 20px;
   height: 20px;
 }
-#modal .modal-content button {
-  justify-self: flex-end;
+
+.tags-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tags-list {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  gap: 12px;
+  border: 3px solid var(--bavarian-gold-2);
+  border-radius: 4px;
 }

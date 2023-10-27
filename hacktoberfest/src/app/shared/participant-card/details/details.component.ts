@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
   seeDetails: boolean = false;
-  @Output() seeDetailsChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() seeDetailsChange: EventEmitter<null> = new EventEmitter();
 
   constructor() {}
 
@@ -15,6 +15,6 @@ export class DetailsComponent implements OnInit {
 
   toggleDetails() {
     this.seeDetails = !this.seeDetails;
-    this.seeDetailsChange.emit(this.seeDetails);
+    this.seeDetailsChange.emit();
   }
 }
