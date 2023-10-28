@@ -1,22 +1,26 @@
 <div class="content-container">
-  <img src="assets/Logo image.png" />
-  <div class="information">
-    <span> Giorgos </span>
-    <span>Zogopoulos </span>
-    <div class="pill-tags">
-      <div class="pill-tag">Pill tag</div>
-      <div class="pill-tag">Pill tag</div>
+    <img src="assets/Logo image.png" />
+    <div class="information">
+        <span> {{ participant.name }} </span>
+        <span> {{ participant.last_name }} </span>
+        <div class="pill-tags" *ngIf="participant.skills">
+            <div
+                class="pill-tag"
+                *ngFor="let skill of participant.skills.split(', ')"
+            >
+                {{ skill }}
+            </div>
+        </div>
     </div>
-  </div>
-  <app-details
-    (seeDetailsChange)="changeArrowPosition()"
-    [style.justify-content]="arrow_down ? 'flex-end' : 'flex-start'"
-  ></app-details>
+    <app-details
+        (seeDetailsChange)="changeArrowPosition()"
+        [style.justify-content]="arrow_down ? 'flex-end' : 'flex-start'"
+    ></app-details>
 </div>
 <div class="more-details" [style.display]="arrow_down ? 'none' : 'flex'">
-  <div class="details-row">Register at: 00/00/00</div>
-  <div class="details-row">
-    <div>Gitlab ID: #123kj45</div>
-    <div>Kaggle ID: #dfsdff33</div>
-  </div>
+    <div class="details-row">Register at: 00/00/00</div>
+    <div class="details-row">
+        <div>Gitlab ID: {{ participant.gitlab_id }}</div>
+        <div>Kaggle ID: {{ participant.kaggle_id }}</div>
+    </div>
 </div>

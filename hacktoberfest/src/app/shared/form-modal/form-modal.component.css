@@ -228,6 +228,8 @@ input,
 .tags-container {
   display: flex;
   flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
 }
 
 .tags-list {

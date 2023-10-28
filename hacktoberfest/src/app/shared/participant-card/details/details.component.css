@@ -1,64 +1,65 @@
 :host {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
 }
 
 .expand-element,
 .collapse-element {
-  width: calc(5 * 16.64px); /* 16.64 each box */
-  height: calc(3 * 16.64px);
-  align-self: flex-end;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  animation: fadeIn 0.5s;
+    width: calc(5 * 16.64px); /* 16.64 each box */
+    height: calc(3 * 16.64px);
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    animation: fadeIn 0.5s;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .collapse-element {
-  justify-self: flex-start;
+    justify-self: flex-start;
 }
 
 .expand-element .box,
 .collapse-element .box {
-  width: 16.64px;
-  height: 16.64px;
-  background-color: var(--bavarian-gold-1);
-  box-shadow: 0 0 10px var(--bavarian-gold-2);
-  transition: all 0.2s ease-in-out;
+    width: 16.64px;
+    height: 16.64px;
+    background-color: var(--bavarian-gold-1);
+    box-shadow: 0 0 10px var(--bavarian-gold-2);
+    transition: all 0.2s ease-in-out;
 }
 
 .expand-element:hover .box,
 .collapse-element:hover .box {
-  background-color: var(--bavarian-gold-1);
-  box-shadow: 0 0 20px var(--bavarian-gold-1);
+    background-color: var(--bavarian-gold-1);
+    box-shadow: 0 0 20px var(--bavarian-gold-1);
 }
 
 .expand-element .first-row,
 .collapse-element .first-row {
-  display: flex;
-  width: 100%;
-  gap: calc(16.64px * 3);
+    display: flex;
+    width: 100%;
+    gap: calc(16.64px * 3);
 }
 
 .expand-element .second-row,
 .collapse-element .second-row {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: calc(16.64px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: calc(16.64px);
 }
 
 .expand-element .third-row,
 .collapse-element .third-row {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }

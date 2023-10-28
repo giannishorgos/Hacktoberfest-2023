@@ -1,123 +1,144 @@
 <div id="modal" [style.display]="displayForm ? 'flex' : 'none'">
-  <form class="modal-content">
-    <div (click)="closeForm()" class="close-button">
-      <div class="first-row">
-        <div class="box"></div>
-        <div class="box"></div>
-      </div>
-      <div class="second-row">
-        <div class="box"></div>
-        <div class="box"></div>
-      </div>
-      <div class="third-row">
-        <div class="box"></div>
-      </div>
-      <div class="second-row">
-        <div class="box"></div>
-        <div class="box"></div>
-      </div>
-      <div class="first-row">
-        <div class="box"></div>
-        <div class="box"></div>
-      </div>
-    </div>
-    <header>
-      <div class="modal-title">register here</div>
-      <div class="modal-subtitle">
-        Welcome to Hacktoberfest 2023<br />
-        Fill the form in order to register
-      </div>
-    </header>
-    <div class="line"></div>
-    <main>
-      <div class="input-row">
-        <div class="input-entry">
-          <label for="name">Name <span>*</span></label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="| Enter your name"
-          />
-        </div>
-        <div class="input-entry">
-          <label for="name">Last Name <span>*</span></label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="| Enter your lastname"
-          />
-        </div>
-      </div>
-      <div class="input-row">
-        <div class="input-entry">
-          <label for="name">Gitlab ID <span>*</span></label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="| Enter your Gitlab ID"
-          />
-        </div>
-        <div class="input-entry">
-          <label for="name">Kaggle ID <span>*</span></label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="| Enter your Kaggle ID"
-          />
-        </div>
-      </div>
-      <div class="input-row">
-        <div class="input-entry">
-          <label for="name">About you</label>
-          <textarea placeholder="| Write your bio"></textarea>
-        </div>
-      </div>
-      <div class="input-row">
-        <div class="input-entry">
-          <label for="date-of-birth">Date of birth</label>
-          <input type="date" id="date" name="date" placeholder="00/00/00" />
-        </div>
-        <div class="input-entry">
-          <label for="tags">Tags</label>
-          <div class="tags-container">
-            <div class="tags-input">
-              <div>Choose your interests</div>
-              <div
-                (click)="toggleShowTags()"
-                class="arrow"
-                [style.border-color]="
-                  showTags
-                    ? 'var(--bavarian-gold-2) transparent transparent transparent
-                    '
-                    : 'transparent transparent var(--bavarian-gold-2) transparent
-                    '
-                "
-                [style.transform]="
-                  showTags ? 'translateY(25%)' : 'translateY(-25%)'
-                "
-              ></div>
+    <form
+        [formGroup]="participantForm"
+        (ngSubmit)="onSubmit()"
+        class="modal-content"
+    >
+        <div (click)="closeForm()" class="close-button">
+            <div class="first-row">
+                <div class="box"></div>
+                <div class="box"></div>
             </div>
-            <div class="tags-list" [style.display]="showTags ? 'none' : 'flex'">
-              <app-tag-option
-                [isSelected]="tags[index].isSelected"
-                [tagName]="tags[index].name"
-                *ngFor="let i of tags; let index = index"
-                (click)="toggleSelectedTag(index)"
-                [style.background-color]="
-                  tags[index].isSelected
-                    ? 'var(--bavarian-gold-1)'
-                    : 'transparent'
-                "
-              ></app-tag-option>
+            <div class="second-row">
+                <div class="box"></div>
+                <div class="box"></div>
             </div>
-          </div>
+            <div class="third-row">
+                <div class="box"></div>
+            </div>
+            <div class="second-row">
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="first-row">
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
         </div>
-      </div>
-    </main>
-    <button>Register</button>
-  </form>
+        <header>
+            <div class="modal-title">register here</div>
+            <div class="modal-subtitle">
+                Welcome to Hacktoberfest 2023<br />
+                Fill the form in order to register
+            </div>
+        </header>
+        <div class="line"></div>
+        <main>
+            <div class="input-row">
+                <div class="input-entry">
+                    <label for="name">Name <span>*</span></label>
+                    <input
+                        formControlName="name"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="| Enter your name"
+                    />
+                </div>
+                <div class="input-entry">
+                    <label for="name">Last Name <span>*</span></label>
+                    <input
+                        formControlName="last_name"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="| Enter your lastname"
+                    />
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-entry">
+                    <label for="name">Gitlab ID <span>*</span></label>
+                    <input
+                        formControlName="gitlab_id"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="| Enter your Gitlab ID"
+                    />
+                </div>
+                <div class="input-entry">
+                    <label for="name">Kaggle ID <span>*</span></label>
+                    <input
+                        formControlName="kaggle_id"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="| Enter your Kaggle ID"
+                    />
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-entry">
+                    <label for="name">About you</label>
+                    <textarea
+                        formControlName="bio"
+                        placeholder="| Write your bio"
+                    ></textarea>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-entry">
+                    <label for="date-of-birth">Date of birth</label>
+                    <input
+                        formControlName="birth_date"
+                        type="date"
+                        id="date"
+                        name="date"
+                        placeholder="00/00/00"
+                    />
+                </div>
+                <div class="input-entry">
+                    <label for="tags">Tags</label>
+                    <div class="tags-container">
+                        <div class="tags-input" (click)="toggleShowTags()">
+                            <div>Choose your interests</div>
+                            <div
+                                class="arrow"
+                                [style.border-color]="
+                                    showTags
+                                        ? 'var(--bavarian-gold-2) transparent transparent transparent
+                    '
+                                        : 'transparent transparent var(--bavarian-gold-2) transparent
+                    '
+                                "
+                                [style.transform]="
+                                    showTags
+                                        ? 'translateY(25%)'
+                                        : 'translateY(-25%)'
+                                "
+                            ></div>
+                        </div>
+                        <div
+                            class="tags-list"
+                            [style.display]="showTags ? 'none' : 'flex'"
+                        >
+                            <app-tag-option
+                                [isSelected]="tags[index].isSelected"
+                                [tagName]="tags[index].name"
+                                *ngFor="let i of tags; let index = index"
+                                (click)="toggleSelectedTag(index)"
+                                [style.background-color]="
+                                    tags[index].isSelected
+                                        ? 'var(--bavarian-gold-1)'
+                                        : 'transparent'
+                                "
+                            ></app-tag-option>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <button type="submit">Register</button>
+    </form>
 </div>
