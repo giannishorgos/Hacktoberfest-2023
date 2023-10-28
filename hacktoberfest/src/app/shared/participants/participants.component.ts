@@ -25,7 +25,6 @@ export class ParticipantsComponent implements OnInit {
             error: (error) => {
                 console.log('Error on getting participants! ' + error)
             },
-            complete: () => {},
         })
     }
 

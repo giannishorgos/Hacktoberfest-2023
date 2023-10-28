@@ -6,7 +6,7 @@ import { FormModalComponent } from './form-modal/form-modal.component'
 import { ParticipantCardComponent } from './participant-card/participant-card.component'
 import { DetailsComponent } from './participant-card/details/details.component'
 import { TagOptionComponent } from './form-modal/tag-option/tag-option.component'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
     declarations: [

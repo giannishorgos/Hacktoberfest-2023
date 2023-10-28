@@ -50,7 +50,6 @@ export class FormModalComponent implements OnInit {
             error: (error) => {
                 console.log('Error on getting skills! ' + error)
             },
-            complete: () => {},
         })
     }
 
