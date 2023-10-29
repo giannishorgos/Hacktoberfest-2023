@@ -1,11 +1,12 @@
 <main>
     <div class="participants-container">
         <button (click)="openForm()">New Registration</button>
-        <div class="participants-cards"></div>
-        <app-participant-card
-            *ngFor="let participant of participants"
-            style="width: 100%"
-            [participant]="participant"
-        ></app-participant-card>
+        <div class="participants-cards">
+            <app-participant-card
+                *ngFor="let participant of participants"
+                style="width: 100%"
+                [participant]="participant"
+            ></app-participant-card>
+        </div>
     </div>
 </main>

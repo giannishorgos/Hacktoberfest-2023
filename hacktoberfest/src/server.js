@@ -1,14 +1,15 @@
+require('dotenv').config() // Load environment variables from .env file
 const express = require('express')
 const mysql = require('mysql')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    port: '3333',
-    user: 'root',
-    password: '1234',
-    database: 'hacktoberfest2023',
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
 })
 
 db.connect((err) => {
@@ -20,13 +21,13 @@ db.connect((err) => {
 })
 
 const corsOptions = {
-    origin: 'http://localhost:4200',
+    origin: process.env.CLIENT_URL,
     methods: 'GET,POST',
     credentials: true,
 }
 
 const app = express()
-const port = 4000
+const port = process.env.SERVER_PORT || 4000
 
 app.use(bodyParser.json()).use(cors(corsOptions))
 
@@ -52,7 +53,6 @@ app.post('/api/participants', (req, res) => {
       (name, last_name, gitlab_id, kaggle_id, bio, birth_date) 
       VALUES (?, ?, ?, ?, ?, ?);`
     const query_participants_has_skills = `INSERT INTO participants_has_skills (participant_id, skill_id) VALUES (?, ?);`
-    const skills = req.body.skills
 
     db.query(
         query_participants,
@@ -69,21 +69,23 @@ app.post('/api/participants', (req, res) => {
                 res.status(500).json({ error: 'Error posting data' + error })
             } else {
                 const participant_id = results.insertId
-                const participant_skill_promises = skills.map((skill) => {
-                    return new Promise((resolve, reject) => {
-                        db.query(
-                            query_participants_has_skills,
-                            [participant_id, skill],
-                            (error, results) => {
-                                if (error) {
-                                    reject(error)
-                                } else {
-                                    resolve(results)
+                const participant_skill_promises = req.body.skills.map(
+                    (skill) => {
+                        return new Promise((resolve, reject) => {
+                            db.query(
+                                query_participants_has_skills,
+                                [participant_id, skill],
+                                (error, results) => {
+                                    if (error) {
+                                        reject(error)
+                                    } else {
+                                        resolve(results)
+                                    }
                                 }
-                            }
-                        )
-                    })
-                })
+                            )
+                        })
+                    }
+                )
 
                 Promise.all(participant_skill_promises)
                     .then(() => {

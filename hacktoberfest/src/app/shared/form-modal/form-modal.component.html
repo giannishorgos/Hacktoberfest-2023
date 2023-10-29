@@ -1,6 +1,6 @@
-<div id="modal" [style.display]="displayForm ? 'flex' : 'none'">
+<div id="modal" [style.display]="display_form ? 'flex' : 'none'">
     <form
-        [formGroup]="participantForm"
+        [formGroup]="participant_form"
         (ngSubmit)="onSubmit()"
         class="modal-content"
     >
@@ -106,14 +106,14 @@
                             <div
                                 class="arrow"
                                 [style.border-color]="
-                                    showTags
+                                    show_tags
                                         ? 'var(--bavarian-gold-2) transparent transparent transparent
                     '
                                         : 'transparent transparent var(--bavarian-gold-2) transparent
                     '
                                 "
                                 [style.transform]="
-                                    showTags
+                                    show_tags
                                         ? 'translateY(25%)'
                                         : 'translateY(-25%)'
                                 "
@@ -121,15 +121,15 @@
                         </div>
                         <div
                             class="tags-list"
-                            [style.display]="showTags ? 'none' : 'flex'"
+                            [style.display]="show_tags ? 'none' : 'flex'"
                         >
                             <app-tag-option
-                                [isSelected]="tags[index].isSelected"
-                                [tagName]="tags[index].name"
+                                [is_selected]="tags[index].is_selected"
+                                [tag_name]="tags[index].name"
                                 *ngFor="let i of tags; let index = index"
                                 (click)="toggleSelectedTag(index)"
                                 [style.background-color]="
-                                    tags[index].isSelected
+                                    tags[index].is_selected
                                         ? 'var(--bavarian-gold-1)'
                                         : 'transparent'
                                 "

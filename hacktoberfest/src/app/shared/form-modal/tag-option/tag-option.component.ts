@@ -1,11 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core'
 
 @Component({
-  selector: 'app-tag-option',
-  templateUrl: './tag-option.component.html',
-  styleUrls: ['./tag-option.component.css'],
+    selector: 'app-tag-option',
+    templateUrl: './tag-option.component.html',
+    styleUrls: ['./tag-option.component.css'],
 })
 export class TagOptionComponent {
-  @Input() isSelected!: boolean;
-  @Input() tagName!: string;
+    @Input() is_selected!: boolean
+    @Input() tag_name!: string
 }

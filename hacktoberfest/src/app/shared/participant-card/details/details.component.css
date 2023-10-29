@@ -6,8 +6,8 @@
 
 .expand-element,
 .collapse-element {
-    width: calc(5 * 16.64px); /* 16.64 each box */
-    height: calc(3 * 16.64px);
+    width: calc(5 * var(--expand-element-size)); /* 16.64 each box */
+    height: calc(3 * var(--expand-element-size));
     align-self: flex-end;
     display: flex;
     flex-direction: column;
@@ -30,8 +30,8 @@
 
 .expand-element .box,
 .collapse-element .box {
-    width: 16.64px;
-    height: 16.64px;
+    width: var(--expand-element-size);
+    height: var(--expand-element-size);
     background-color: var(--bavarian-gold-1);
     box-shadow: 0 0 10px var(--bavarian-gold-2);
     transition: all 0.2s ease-in-out;
@@ -47,7 +47,7 @@
 .collapse-element .first-row {
     display: flex;
     width: 100%;
-    gap: calc(16.64px * 3);
+    gap: calc(var(--expand-element-size) * 3);
 }
 
 .expand-element .second-row,
@@ -55,7 +55,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: calc(16.64px);
+    gap: calc(var(--expand-element-size));
 }
 
 .expand-element .third-row,

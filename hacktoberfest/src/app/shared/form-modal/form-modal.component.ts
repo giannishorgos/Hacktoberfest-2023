@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { DataSharingService } from 'src/app/services/data-sharing.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { ApiService } from 'src/app/services/api-service.service'
+import { ApiService } from 'src/app/services/api.service'
 
 @Component({
     selector: 'app-form-modal',
@@ -9,22 +9,22 @@ import { ApiService } from 'src/app/services/api-service.service'
     styleUrls: ['./form-modal.component.css'],
 })
 export class FormModalComponent implements OnInit {
-    participantForm: FormGroup
-    displayForm: boolean = false
-    showTags: boolean = true
-    tags: { id: number; name: string; isSelected: boolean }[] = []
+    participant_form: FormGroup
+    display_form: boolean = false
+    show_tags: boolean = true
+    tags: { id: number; name: string; is_selected: boolean }[] = []
 
     constructor(
-        private dataSharingService: DataSharingService,
-        private apiService: ApiService
+        private data_sharing_service: DataSharingService,
+        private api_service: ApiService
     ) {
-        this.dataSharingService.displayFormChange.subscribe(
+        this.data_sharing_service.display_form_change.subscribe(
             (value: boolean) => {
-                this.displayForm = value
+                this.display_form = value
             }
         )
 
-        this.participantForm = new FormBuilder().group({
+        this.participant_form = new FormBuilder().group({
             name: ['', Validators.required],
             last_name: ['', Validators.required],
             gitlab_id: ['', Validators.required],
@@ -36,13 +36,13 @@ export class FormModalComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.apiService.getSkills().subscribe({
+        this.api_service.getSkills().subscribe({
             next: (skills) => {
                 skills.forEach((skill) => {
                     this.tags.push({
                         id: skill.id,
                         name: skill.name,
-                        isSelected: false,
+                        is_selected: false,
                     })
                 })
                 console.log('Success on getting skills!')
@@ -54,35 +54,37 @@ export class FormModalComponent implements OnInit {
     }
 
     closeForm() {
-        this.dataSharingService.toggleForm()
+        this.data_sharing_service.toggleForm()
     }
 
     toggleShowTags() {
-        this.showTags = !this.showTags
+        this.show_tags = !this.show_tags
     }
 
     toggleSelectedTag(index: number) {
-        this.tags[index].isSelected = !this.tags[index].isSelected
+        this.tags[index].is_selected = !this.tags[index].is_selected
     }
 
     onSubmit() {
-        if (this.participantForm.valid) {
-            const formData = this.participantForm.value
+        if (this.participant_form.valid) {
+            const formData = this.participant_form.value
             formData.skills = []
             this.tags.forEach((tag) => {
-                formData.skills.push(tag.id)
+                if (tag.is_selected) {
+                    formData.skills.push(tag.id)
+                }
             })
-            console.log(formData)
 
-            this.apiService.postParticipant(formData).subscribe({
+            this.api_service.postParticipant(formData).subscribe({
                 next: () => {
                     console.log('Success!')
-                    this.participantForm.reset()
+                    this.participant_form.reset()
 
                     this.tags.forEach((tag) => {
-                        tag.isSelected = false
+                        tag.is_selected = false
                     })
-                    console.log(this.tags)
+                    this.data_sharing_service.setNewParticipant(true)
+                    this.toggleShowTags()
                     this.closeForm()
                 },
                 error: (error) => {
@@ -90,6 +92,8 @@ export class FormModalComponent implements OnInit {
                 },
                 complete: () => {},
             })
+        } else {
+            alert('Please fill all the required fields!')
         }
     }
 }

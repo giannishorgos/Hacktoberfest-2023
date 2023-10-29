@@ -6,6 +6,7 @@ export interface Participant {
     kaggle_id: string
     bio: string
     birth_date: string
+    registration_date: string
     skills: string
 }
 

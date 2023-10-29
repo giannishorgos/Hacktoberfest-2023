@@ -1,30 +1,30 @@
 :host {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: fit-content;
-  padding: 0 8px;
-  border-radius: 20px;
-  gap: 8px;
-  /* background-color: var(--bavarian-gold-1); */
-  font-size: var(--pill-p1-font-size);
-  font-weight: var(--font-medium);
-  cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: fit-content;
+    padding: 0 8px;
+    border-radius: 20px;
+    gap: 8px;
+    /* background-color: var(--bavarian-gold-1); */
+    font-size: var(--p1-font-size);
+    font-weight: var(--font-medium);
+    cursor: pointer;
 }
 
 .radio-button {
-  width: 16px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: 2px solid var(--bavarian-gold-2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+    width: 16px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid var(--bavarian-gold-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .radio-button .selected {
-  width: 10px;
-  aspect-ratio: 1;
-  border-radius: 50%;
+    width: 10px;
+    aspect-ratio: 1;
+    border-radius: 50%;
 }

@@ -1,52 +1,77 @@
 header {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 64px;
-  height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 64px;
+    height: fit-content;
 }
 
 header .logo-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    height: fit-content;
 }
 
 header .logo-container .logo {
-  width: 64px;
-  height: auto;
+    width: 64px;
+    height: auto;
 }
 
 header .logo-container .logo-wordmark {
-  width: 187.3px;
-  height: auto;
+    width: 187.3px;
+    height: auto;
 }
 
 header .description-container {
-  display: flex;
-  justify-content: flex-start;
-  gap: 64px;
-  color: var(--manga-2);
+    display: flex;
+    justify-content: flex-start;
+    gap: 64px;
+    color: var(--manga-2);
+    width: 100%;
 }
 
 header .description-container span {
-  color: var(--bright-green);
-  margin: 0;
+    color: var(--bright-green);
+    margin: 0;
 }
 
 header .description-container .title {
-  width: 715px;
-  font-size: var(--h1-font-size);
-  font-weight: var(--font-bold);
-  text-transform: uppercase;
-  line-height: 100px;
+    width: 715px;
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    line-height: 100px;
 }
 
 header .description-container .description {
-  width: 100%;
-  font-size: var(--h3-button-font-size);
-  font-weight: var(--font-medium);
+    width: 100%;
+    font-size: var(--h3-button-font-size);
+    font-weight: var(--font-medium);
+}
+
+@media screen and (max-width: 1210px) {
+    header {
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .description-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 64px;
+    }
+
+    header .description-container .title {
+        width: 100%;
+        text-align: center;
+        line-height: normal;
+    }
+
+    header .description-container .description {
+        text-align: center;
+    }
 }

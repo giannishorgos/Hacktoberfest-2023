@@ -1,16 +1,16 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core'
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css'],
+    selector: 'app-details',
+    templateUrl: './details.component.html',
+    styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent {
-  seeDetails: boolean = false;
-  @Output() seeDetailsChange: EventEmitter<null> = new EventEmitter();
+    @Output() see_details_change: EventEmitter<null> = new EventEmitter()
+    see_details: boolean = false
 
-  toggleDetails() {
-    this.seeDetails = !this.seeDetails;
-    this.seeDetailsChange.emit();
-  }
+    toggleDetails() {
+        this.see_details = !this.see_details
+        this.see_details_change.emit()
+    }
 }

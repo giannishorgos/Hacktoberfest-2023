@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, OnChanges } from '@angular/core'
 import { DataSharingService } from 'src/app/services/data-sharing.service'
-import { ApiService } from 'src/app/services/api-service.service'
+import { ApiService } from 'src/app/services/api.service'
 
 import { Participant } from '../interfaces/api-interfaces.interface'
 @Component({
@@ -10,15 +10,30 @@ import { Participant } from '../interfaces/api-interfaces.interface'
 })
 export class ParticipantsComponent implements OnInit {
     participants: Participant[] = []
+    have_new_participant: boolean = false
 
     constructor(
-        private dataSharingService: DataSharingService,
-        private apiService: ApiService
-    ) {}
+        private data_sharing_service: DataSharingService,
+        private api_service: ApiService
+    ) {
+        this.data_sharing_service.new_participant_change.subscribe((value) => {
+            this.getParticipantsData()
+        })
+    }
 
     ngOnInit() {
-        this.apiService.getParticipants().subscribe({
+        this.getParticipantsData()
+    }
+
+    getParticipantsData() {
+        this.api_service.getParticipants().subscribe({
             next: (participants) => {
+                participants.forEach((participant) => {
+                    participant.registration_date = new Date(
+                        participant.registration_date
+                    ).toLocaleDateString('gr-GR')
+                })
+
                 this.participants = participants
                 console.log('Success on getting participants!')
             },
@@ -29,6 +44,6 @@ export class ParticipantsComponent implements OnInit {
     }
 
     openForm() {
-        this.dataSharingService.toggleForm()
+        this.data_sharing_service.toggleForm()
     }
 }

@@ -13,12 +13,14 @@
         </div>
     </div>
     <app-details
-        (seeDetailsChange)="changeArrowPosition()"
+        (see_details_change)="changeArrowPosition()"
         [style.justify-content]="arrow_down ? 'flex-end' : 'flex-start'"
     ></app-details>
 </div>
 <div class="more-details" [style.display]="arrow_down ? 'none' : 'flex'">
-    <div class="details-row">Register at: 00/00/00</div>
+    <div class="details-row">
+        Register at: {{ participant.registration_date }}
+    </div>
     <div class="details-row">
         <div>Gitlab ID: {{ participant.gitlab_id }}</div>
         <div>Kaggle ID: {{ participant.kaggle_id }}</div>
