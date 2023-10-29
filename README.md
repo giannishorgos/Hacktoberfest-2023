@@ -55,7 +55,7 @@ Follow these steps to set up the project:
 ### Structure
 The database structure is represented in the following image:
 
-<img src="db_erd.png" alt="Database Structure" height='200' />
+
 
 ### Setup
 Ensure that you have MySQL Server installed and configured. You can use the provided database dump (`hacktoberfest_db.sql`) to create the necessary tables.
