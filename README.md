@@ -55,6 +55,7 @@ Follow these steps to set up the project:
 ### Structure
 The database structure is represented in the following image:
 
+<img src="erd_diagram.png" alt="Database Structure" height='400' />
 
 
 ### Setup
