@@ -8,10 +8,10 @@ Welcome to the Hacktoberfest 2023 - Dev Assignment repository! This project is p
 - [Technologies Used](#technologies-used)
 - [Directory Structure](#directory-structure)
 - [Setup Instructions](#setup-instructions)
-- [Database Setup](#database-setup)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Database](#database)
+  - [Database Structure](#structure)
+  - [Database Setup](#setup)
+    
 
 ## Project Description
 
@@ -51,11 +51,13 @@ Follow these steps to set up the project:
 4. Create and set up a MySQL database using the `hacktoberfest_db.sql` dump.
 5. Run the Express server with `node server.js`.
 
-## Database Setup
+## Database
+### Structure
 The database structure is represented in the following image:
 
-<img src="db_erd.png" alt="Database Structure" height='200' />\
-\
+<img src="db_erd.png" alt="Database Structure" height='200' />
+
+### Setup
 Ensure that you have MySQL Server installed and configured. You can use the provided database dump (`hacktoberfest_db.sql`) to create the necessary tables.
 
 ```bash
