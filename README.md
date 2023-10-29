@@ -36,8 +36,8 @@ The project utilizes the following technologies:
 The project directory is structured as follows:
 
 - `hacktoberfest/` contains the Angular project.
-- `hacktoberfest/src/server.js` is the Express server.
-- `hacktoberfest/src/.env` files should be updated with the necessary database configuration.
+- `hacktoberfest/server.js` is the Express server.
+- `hacktoberfest/.env` files should be updated with the necessary database configuration.
 - `hacktoberfest_db.sql` is a database dump containing skill data.
 - `index.html` and `style.css` replicate the Figma design for the desktop view.
 
@@ -52,7 +52,10 @@ Follow these steps to set up the project:
 5. Run the Express server with `node server.js`.
 
 ## Database Setup
+The database structure is represented in the following image:
 
+<img src="db_erd.png" alt="Database Structure" height='200' />\
+\
 Ensure that you have MySQL Server installed and configured. You can use the provided database dump (`hacktoberfest_db.sql`) to create the necessary tables.
 
 ```bash
