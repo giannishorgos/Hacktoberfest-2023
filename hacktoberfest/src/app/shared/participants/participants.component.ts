@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { DataSharingService } from 'src/app/services/data-sharing.service'
 import { ApiService } from 'src/app/services/api.service'
 
@@ -16,7 +16,7 @@ export class ParticipantsComponent implements OnInit {
         private data_sharing_service: DataSharingService,
         private api_service: ApiService
     ) {
-        this.data_sharing_service.new_participant_change.subscribe((value) => {
+        this.data_sharing_service.new_participant_change.subscribe(() => {
             this.getParticipantsData()
         })
     }

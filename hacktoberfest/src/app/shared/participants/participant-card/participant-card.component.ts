@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { Participant } from '../interfaces/api-interfaces.interface'
+import { Participant } from '../../interfaces/api-interfaces.interface'
 
 @Component({
     selector: 'app-participant-card',

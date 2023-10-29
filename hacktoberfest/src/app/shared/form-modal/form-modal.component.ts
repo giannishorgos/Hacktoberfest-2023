@@ -90,7 +90,6 @@ export class FormModalComponent implements OnInit {
                 error: (error) => {
                     console.log('Error posting data ' + error)
                 },
-                complete: () => {},
             })
         } else {
             alert('Please fill all the required fields!')
