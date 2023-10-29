@@ -1,6 +1,6 @@
-# Hacktoberfest Participants Registration
+# Hacktoberfest 2023 - Dev Assignment
 
-Welcome to the Hacktoberfest 2023 - Dev Assignment repository! This project is part of the Hacktoberfest challenge, and it's focused on the development of a website that allows participants to register and view their details. This README provides an overview of the project and how to set it up.
+Welcome to the Hacktoberfest 2023 - Dev Assignment repository! This project is part of the Hacktoberfest challenge, and it's focused on the development of a website that allows participants to register and view their details. This README provides an overview of the project and instructions on how to set it up.
 
 ## Table of Contents
 
@@ -15,12 +15,11 @@ Welcome to the Hacktoberfest 2023 - Dev Assignment repository! This project is p
 
 ## Project Description
 
-The Hacktoberfest Participants Registration project is a web application that provides the following features:
+The Hacktoberfest Participants Registration project, that replicates the design provided in Figma, is a web application that provides the following features:
 
-- User registration: Participants can register by providing their information, including name, GitLab ID, Kaggle ID, bio, and birth date.
-- Skills tracking: Participants can select their skills (FrontEnd, BackEnd, etc.) during registration.
-- Participants list: The website displays a list of registered participants along with their details and skills.
-- Figma Design: The project replicates the design provided in Figma.
+- **User registration:** Participants can register by providing their information, including name, GitLab ID, Kaggle ID, bio, and birth date.
+- **Skills tracking:** Participants can select their skills (FrontEnd, BackEnd, etc.) during registration.
+- **Participants list:** The website displays a list of registered participants along with their details and skills.
 
 ## Technologies Used
 
@@ -29,7 +28,6 @@ The project utilizes the following technologies:
 - Angular: The frontend of the application is built using the Angular framework.
 - MySQL Docker Image: The MySQL database is containerized using a Docker image.
 - Express Server: An Express.js server provides APIs to interact with the database.
-- HTML and CSS: The HTML and CSS files are used to replicate the Figma design for the desktop view.
 
 ## Directory Structure
 
@@ -53,7 +51,7 @@ Follow these steps to set up the project:
 
 ## Database
 ### Structure
-The database structure is represented in the following image:
+The database structure is represented in the following ERD Diagram:
 
 <img src="erd_diagram.png" alt="Database Structure" height='400' />
 
